@@ -3822,9 +3822,11 @@
 .sp-tab.on i { background:#fff; }
 
 /* ---- 재생 화면 (Now Playing) ---- */
-.sp-root .sp-np { --u:min(100cqw/393, 100cqh/852); position:absolute; z-index:30; left:0; top:0; width:100cqw; height:calc(852*var(--u)); background:#131313; color:#fff; overflow:hidden; visibility:hidden; transform:translateY(calc(705*var(--u))); opacity:0; border-radius:calc(12*var(--u)) calc(12*var(--u)) 0 0; pointer-events:none;
+.sp-root .sp-np { --sh:max(0px, calc(852*var(--u) - 100cqh)); --a:min(var(--sh), calc(50*var(--u))); --b:min(max(calc(var(--sh) - var(--a)), 0px), calc(30*var(--u))); --c:max(calc(var(--sh) - var(--a) - var(--b)), 0px); position:absolute; z-index:30; left:0; top:0; width:calc(393*var(--u)); height:calc(852*var(--u)); background:#131313; color:#fff; overflow:hidden; visibility:hidden; transform:translateY(calc(705*var(--u))); opacity:0; border-radius:calc(12*var(--u)) calc(12*var(--u)) 0 0; pointer-events:none;
   transition:transform .3s cubic-bezier(.25,.65,.3,1), opacity .12s ease .15s, border-radius .27s ease, visibility 0s linear .3s; }
-.sp-root .sp-np > * { margin-left:calc((100cqw - 393*var(--u))/2); }
+.sp-root .sp-np > .x, .sp-root .sp-np > .hd, .sp-root .sp-np > .dt { translate:0 calc(-1*var(--a)); }
+.sp-root .sp-np > .cv { translate:0 calc(-1*var(--a)); width:calc(345*var(--u) - var(--c)); height:calc(345*var(--u) - var(--c)); left:calc(24*var(--u) + var(--c)/2); }
+.sp-root .sp-np > :not(.x):not(.hd):not(.dt):not(.cv) { translate:0 calc(-1*var(--sh)); }
 .sp-root .sp-np.is-open { visibility:visible; transform:none; opacity:1; border-radius:0; pointer-events:auto; transition:transform .3s cubic-bezier(.25,.65,.3,1), opacity .05s linear, border-radius .27s ease, visibility 0s; }
 .sp-root .sp-np.is-drag { transition:none; }
 .sp-mini.np-hide { opacity:0; transition:none !important; }
