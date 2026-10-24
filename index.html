@@ -3607,9 +3607,9 @@
 .ig-sheetwrap.show { pointer-events:auto; }
 .ig-back2 { position:absolute; inset:0; background:rgba(0,0,0,.58); opacity:0; transition:opacity .28s; }
 .ig-sheetwrap.show .ig-back2 { opacity:1; }
-.ig-sheet { position:absolute; left:0; right:0; bottom:0; top:calc(257*var(--u)); background:#fff; border-radius:calc(28*var(--u)) calc(28*var(--u)) 0 0; display:flex; flex-direction:column; transform:translateY(105%); transition:transform .36s cubic-bezier(.22,.9,.25,1), top .32s cubic-bezier(.3,.8,.2,1); overflow:hidden; }
+.ig-sheet { position:absolute; left:0; right:0; bottom:0; top:auto; height:min(max(calc(595*var(--u)), calc(100% - 257*var(--u))), calc(100% - 61*var(--u))); background:#fff; border-radius:calc(28*var(--u)) calc(28*var(--u)) 0 0; display:flex; flex-direction:column; transform:translateY(105%); transition:transform .36s cubic-bezier(.22,.9,.25,1), height .32s cubic-bezier(.3,.8,.2,1); overflow:hidden; }
 .ig-sheetwrap.show .ig-sheet { transform:none; }
-.ig-sheetwrap.full .ig-sheet { top:calc(61*var(--u)); }
+.ig-sheetwrap.full .ig-sheet { height:calc(100% - 61*var(--u)); }
 .ig-shead { position:relative; flex:none; height:calc(90*var(--u)); }
 .ig-shead .h { position:absolute; left:50%; top:calc(13*var(--u)); width:calc(40*var(--u)); height:calc(3*var(--u)); margin-left:calc(-20*var(--u)); border-radius:calc(2*var(--u)); background:#555; }
 .ig-shead .ti { position:absolute; left:0; right:0; top:calc(26*var(--u)); text-align:center; font-size:calc(16.5*var(--u)); font-weight:700; }
@@ -3714,9 +3714,9 @@
 .sp-home-label { position:absolute; z-index:2; left:15.2%; top:282px; width:90px; margin-left:-45px; text-align:center; font-size:12.4px; line-height:16px; color:#fff; letter-spacing:-.1px; pointer-events:none;
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Apple SD Gothic Neo","Noto Sans KR",sans-serif; text-shadow:0 0 4px rgba(0,0,0,.28); }
 
-.sp-app { position:absolute; inset:0; overflow:hidden; overflow:clip; background:#121212; container-type:inline-size; color:#fff;
+.sp-app { position:absolute; inset:0; overflow:hidden; overflow:clip; background:#121212; container-type:size; color:#fff;
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Apple SD Gothic Neo","Noto Sans KR",sans-serif; -webkit-tap-highlight-color:transparent; user-select:none; -webkit-user-select:none; }
-.sp-root { --u:calc(100cqw/393); position:absolute; inset:0; overflow:hidden; overflow:clip; background:#121212; }
+.sp-root { --u:min(100cqw/393, 100cqh/852); position:absolute; top:0; bottom:0; left:50%; width:calc(393*var(--u)); margin-left:calc(-196.5*var(--u)); overflow:hidden; overflow:clip; background:#121212; }
 .sp-root button { font:inherit; color:inherit; background:none; border:0; padding:0; cursor:pointer; text-align:left; }
 .sp-root img { display:block; -webkit-user-drag:none; }
 .sp-page { position:absolute; inset:0; opacity:0; pointer-events:none; background:#121212; }
